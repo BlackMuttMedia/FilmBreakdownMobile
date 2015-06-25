@@ -9,6 +9,7 @@ var Styles = StyleSheet.create({
   container: {
     flex: 1,
     flexDirection: 'column',
+    backgroundColor: '#DDDDDD',
     paddingTop: 20,
   },
   filmRow: {
@@ -28,12 +29,15 @@ var Styles = StyleSheet.create({
     flexDirection: 'row',
     fontSize: 20,
     marginBottom: 8,
+    fontWeight: 'bold',
+    color: 'white',
   },
   headingView: {
     textAlign: 'center',
     left: 0,
     right: 0,
     alignItems: 'center',
+    backgroundColor: '#444444'
   },
   body: {
     flexDirection: 'column',
