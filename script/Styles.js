@@ -17,8 +17,6 @@ var Styles = StyleSheet.create({
     flexDirection: 'row',
     justifyContent: 'center',
     alignItems: 'center',
-    left: 0,
-    right: 0,
   },
   title: {
     flexDirection: 'row',
@@ -31,9 +29,10 @@ var Styles = StyleSheet.create({
     marginBottom: 8,
     fontWeight: 'bold',
     color: 'white',
+    left: 0,
+    right: 0,
   },
   headingView: {
-    textAlign: 'center',
     left: 0,
     right: 0,
     alignItems: 'center',

@@ -7,27 +7,30 @@
 var React = require('react-native');
 var {
   AppRegistry,
+  ListView,
   Text,
   View,
 } = React;
 
 var Styles = require('./script/Styles');
 var Global = require('./script/Global');
-var FilmRow = require('./script/components/FilmRow');
+var FilmList = require('./script/components/FilmList');
 
 var FilmBreakdownMobile = React.createClass({
   getInitialState: function() {
-    return { filmData: Global.GetDummyFilm() };
+    var ds = new ListView.DataSource({rowHasChanged: (r1, r2) => r1.id !== r2.id});
+    var films = Global.GetDummyFilms();
+    
+    return { filmsData: ds.cloneWithRows(films) };
   },
   render: function() {
-    console.log(this.state);
     return (
       <View style={Styles.container}>
         <View style={Styles.headingView}>
           <Text style={Styles.heading}>Films</Text>
         </View>
         <View style={Styles.body}>
-          <FilmRow filmData={this.state.filmData} />
+          <FilmList filmsData={this.state.filmsData} />
         </View>
       </View>
     );
