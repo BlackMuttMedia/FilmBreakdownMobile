@@ -7,47 +7,31 @@
 var React = require('react-native');
 var {
   AppRegistry,
-  StyleSheet,
   Text,
   View,
 } = React;
 
+var Styles = require('./script/Styles');
+var Global = require('./script/Global');
+var FilmRow = require('./script/components/FilmRow');
+
 var FilmBreakdownMobile = React.createClass({
+  getInitialState: function() {
+    return { filmData: Global.GetDummyFilm() };
+  },
   render: function() {
+    console.log(this.state);
     return (
-      <View style={styles.container}>
-        <Text style={styles.welcome}>
-          Welcome to React Native!
-        </Text>
-        <Text style={styles.instructions}>
-          To get started, edit index.ios.js
-        </Text>
-        <Text style={styles.instructions}>
-          Press Cmd+R to reload,{'\n'}
-          Cmd+D or shake for dev menu
-        </Text>
+      <View style={Styles.container}>
+        <View style={Styles.headingView}>
+          <Text style={Styles.heading}>Films</Text>
+        </View>
+        <View style={Styles.body}>
+          <FilmRow filmData={this.state.filmData} />
+        </View>
       </View>
     );
   }
-});
-
-var styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-    backgroundColor: '#F5FCFF',
-  },
-  welcome: {
-    fontSize: 20,
-    textAlign: 'center',
-    margin: 10,
-  },
-  instructions: {
-    textAlign: 'center',
-    color: '#333333',
-    marginBottom: 5,
-  },
 });
 
 AppRegistry.registerComponent('FilmBreakdownMobile', () => FilmBreakdownMobile);
