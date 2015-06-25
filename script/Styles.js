@@ -50,6 +50,9 @@ var Styles = StyleSheet.create({
     width: 53,
     height: 81,
   },
+  rightContainer: {
+    width: 300,
+  },
   listView: {
     paddingTop: 20,
     backgroundColor: '#F5FCFF',

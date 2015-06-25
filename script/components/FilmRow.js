@@ -14,7 +14,9 @@ var {
   Image,
 } = React;
 
+var Global = require('../Global');
 var Styles = require('../Styles');
+var posterBasePath = 'http://image.tmdb.org/t/p/w154';
 
 var FilmRow = React.createClass({
   getInitialState: function(){
@@ -24,7 +26,7 @@ var FilmRow = React.createClass({
     return (
       <View style={Styles.filmRow}>
         <Image
-          source={{uri: this.props.filmData.poster_path}}
+          source={{uri: Global.POSTER_BASE_URL + this.props.filmData.poster_path}}
           style={Styles.thumbnail} />
         <View style={Styles.rightContainer}>
           <Text style={Styles.title}>{this.props.filmData.title}</Text>
