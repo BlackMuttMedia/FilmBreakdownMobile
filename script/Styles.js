@@ -15,11 +15,10 @@ var Styles = StyleSheet.create({
   filmRow: {
     flex: 1,
     flexDirection: 'row',
-    justifyContent: 'center',
     alignItems: 'center',
+    flexWrap: 'wrap',
   },
   title: {
-    flexDirection: 'row',
     fontSize: 20,
     marginBottom: 8,
   },
@@ -50,6 +49,11 @@ var Styles = StyleSheet.create({
     width: 53,
     height: 81,
   },
+  leftContainer: {
+    paddingTop: 10,
+    paddingBottom: 10,
+    paddingRight: 10,
+  },
   rightContainer: {
     width: 300,
   },
@@ -60,7 +64,19 @@ var Styles = StyleSheet.create({
   textInput: {
     height: 40,
     borderColor: 'gray',
-    borderWidth: 1
+    borderWidth: 1,
+  },
+  topSearch: {
+    paddingTop: 5,
+    paddingLeft: 10,
+    paddingRight: 10,
+    shadowColor: "black",
+  },
+  separator: {
+    height: 1,
+    backgroundColor: '#CCCCCC',
+    left: 0,
+    right: 0,
   },
 });
 

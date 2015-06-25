@@ -41,7 +41,7 @@ var FilmBreakdownMobile = React.createClass({
       TheMovieDb.search.getMovie({"query":escape(searchTerm), "search_type":"ngram", "include_adult":"false"}, 
             function(data)
             { 
-              var results = JSON.parse(data).results.slice(0,6);
+              var results = JSON.parse(data).results.slice(0,5);
               callback(results); 
             }, 
             function(data) { });
@@ -59,9 +59,11 @@ var FilmBreakdownMobile = React.createClass({
         <View style={Styles.headingView}>
           <Text style={Styles.heading}>Films</Text>
         </View>
-        <TextInput style={Styles.textInput}
-          placeholder='Search for a film ...'
-          onChangeText={(text) => this.searchForFilms(text, this.setFilmsState)} />
+        <View style={Styles.topSearch}>
+          <TextInput style={Styles.textInput}
+            placeholder='Search for a film ...'
+            onChangeText={(text) => this.searchForFilms(text, this.setFilmsState)} />
+        </View>
         <View style={Styles.body}>
           <FilmList filmsData={this.state.filmsData} />
         </View>

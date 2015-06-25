@@ -25,12 +25,17 @@ var FilmRow = React.createClass({
   render: function() {
     return (
       <View style={Styles.filmRow}>
-        <Image
-          source={{uri: Global.POSTER_BASE_URL + this.props.filmData.poster_path}}
-          style={Styles.thumbnail} />
+        <View style={Styles.leftContainer}>
+          <Image
+            source={{uri: Global.POSTER_BASE_URL + this.props.filmData.poster_path}}
+            style={Styles.thumbnail} />
+        </View>
         <View style={Styles.rightContainer}>
-          <Text style={Styles.title}>{this.props.filmData.title}</Text>
-          <Text style={Styles.year}>{this.props.filmData.release_date}</Text>
+          <Text style={Styles.title}>
+            {this.props.filmData.title} 
+            {this.props.filmData.release_date == undefined ? null : 
+              ' (' + this.props.filmData.release_date.substring(0,4) + ')'}
+          </Text>
         </View>
       </View>
     );

@@ -8,6 +8,7 @@ var React = require('react-native');
 var {
   AppRegistry,
   ListView,
+  View,
 } = React;
 
 var FilmRow = require('./FilmRow');
@@ -18,7 +19,7 @@ var FilmList = React.createClass({
     return (
       <ListView
         dataSource={this.props.filmsData}
-        renderRow={(film) => <FilmRow filmData={film} />} />
+        renderRow={(film) => <FilmRow filmData={film} />}  />
     );
   }
 });
